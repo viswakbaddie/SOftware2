@@ -1,0 +1,43 @@
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --grey: #6b6a6a;
+    --dark-grey: #2c2c2c;
+}
+.button{
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+}
+.button-white{
+    background-color: var(--white);
+    color: var(--black);
+}
+.flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.space-evenly{
+    justify-content: space-evenly ;
+}
+
+
+.page-header, .page-footer{
+    background-color: var(--black);
+    color: var(--white);
+    padding: 1rem;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+}
+.page-title{
+    margin: 0;
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
