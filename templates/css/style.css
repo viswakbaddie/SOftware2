@@ -51,6 +51,8 @@ ul{
 }
 #map{
     width: 100%;
+    height: 40vh;
+    overflow: hidden;
 }
 .responsive-image{
     width: 100%;
@@ -112,5 +114,37 @@ ul{
 
 #player-form input{
     padding: 1rem;
+}
+.hide{
+    display: none;
+}
+.done{
+    background-color: var(--dark-grey);
+}
+
+#weather{
+    border-spacing: 0;
+}
+
+#weather td{
+    padding: 0.3rem;
+}
+#weather td:first-child, #weather td:nth-child(2) {
+    border-right: var(--grey) 1px solid ;
+}
+@media screen and (min-width: 769px){
+    .boxes{
+        font-size: initial;
+    }
+    #map{
+        width: 40%;
+        height: initial;
+    }
+    .boxes{
+        width: 60%;
+        padding-left: 1rem;
+        box-sizing: border-box;
+    }
+    
 }
 
