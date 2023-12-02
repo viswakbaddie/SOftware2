@@ -1,150 +1,135 @@
-:root {
-    --black: #000000;
-    --white: #ffffff;
-    --grey: #6b6a6a;
-    --dark-grey: #2c2c2c;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.button{
-    display: block;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border-radius: 4px;
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-header {
     text-align: center;
+    margin-bottom: 20px;
 }
-.button-white{
-    background-color: var(--white);
-    color: var(--black);
+
+.page-title {
+    font-size: 2rem;
 }
-.flex-wrap{
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+button,
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover,
+a.button:hover {
+    background-color: #555;
+}
+
+.flex-wrap {
     display: flex;
     flex-wrap: wrap;
-}
-.space-evenly{
-    justify-content: space-evenly ;
+    justify-content: space-between;
 }
 
-
-.page-header, .page-footer{
-    background-color: var(--black);
-    color: var(--white);
-    padding: 1rem;
-}
-html, body{
-    margin: 0;
-    padding: 0;
-    font-family: Verdana;
-    background-color: var(--white);
-}
-.page-title{
-    margin: 0;
-    text-align: center;
-}
-ul{
-    list-style-type: none;
-    padding: 0;
-}
-.container{
-    width: 100%;
-    margin: auto;
-    position: relative;
-
-}
-#map{
-    width: 100%;
-    height: 40vh;
-    overflow: hidden;
-}
-.responsive-image{
-    width: 100%;
-    height: auto;
-}
-.boxes{
-    width: 100%;
-}
-.box{
-    padding: 1rem;
-    font-size: x-small;
-}
-#map, .box{
-    border-radius: 6px;
-    box-shadow: #7a7a7a 3px 3px 10px;
-}
-.box h2, .box figure{
-    margin: 0;
-    padding: 0;
-
-
-}
-.box table{
-    width: 100%;
-    text-align: center;
-    border: var(--grey) solid 1px;
-    border-radius: 4px;
-}
-.goal{
-    background-image: url('../img/splatter.png') ;
-    background-size: contain;
-    background-repeat: no-repeat ;
-    padding: 9rem 7rem;
-    text-align: center;
-    position: absolute;
-    bottom: 30%;
-    filter: drop-shadow(0 0 30px #333);
-    transform: rotate(340deg);
-    line-height: 1rem;
-}
-.goal h2, .goal p{
-    margin: 0.5rem;
-
-}
-#player-modal{
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.8) ;
-    position: absolute;
-    top: 0
+#map {
+    flex-basis: 70%;
+    height: 500px;
+    margin-bottom: 20px;
 }
 
-#player-form{
+.boxes {
+    flex-basis: 25%;
     display: flex;
-    width: 50%;
-    margin: 4rem auto;
     flex-direction: column;
 }
 
-#player-form input{
-    padding: 1rem;
+.box {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
-.hide{
+
+.box header {
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+}
+
+table td {
+    padding: 8px;
+}
+
+.page-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+.goal {
+    text-align: center;
+    background-color: gold;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.hide {
     display: none;
 }
-.done{
-    background-color: var(--dark-grey);
+
+#player-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-#weather{
-    border-spacing: 0;
+#player-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#weather td{
-    padding: 0.3rem;
+#player-form input[type="text"],
+#player-form input[type="submit"] {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
 }
-#weather td:first-child, #weather td:nth-child(2) {
-    border-right: var(--grey) 1px solid ;
-}
-@media screen and (min-width: 769px){
-    .boxes{
-        font-size: initial;
-    }
-    #map{
-        width: 40%;
-        height: initial;
-    }
-    .boxes{
-        width: 60%;
-        padding-left: 1rem;
-        box-sizing: border-box;
-    }
-    
-}
-
