@@ -8,7 +8,6 @@ L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
 }).addTo(map);
 map.setView([60, 24], 7);
 
-
 // global variables
 
 // icons
@@ -16,6 +15,12 @@ map.setView([60, 24], 7);
 // form for player name
 
 // function to fetch data from API
+async function getData(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error('invalid server name/url');
+  const data = response.json();
+  return data;
+}
 
 // function to update game status
 
@@ -29,5 +34,25 @@ map.setView([60, 24], 7);
 
 // function to set up game
 // this is the main function that creates the game and calls the other functions
+async function gameSetup() {
+  try {
+    const gameData = await getData('testdata/newgame.json');
+
+    console.log(gameData);
+    for(let airport of gameData.location){
+      const marker = L.marker([airport.latitude,airport.longitude]).addTo(map)
+      if(airport.active){
+        marker.bindPopup(`You are here:<b>${airport.name}</b>`).openPopup();
+      }
+
+
+    }
+  } catch (error) {
+    console.log(error.message);
+  }
+
+}
+
+gameSetup();
 
 // event listener to hide goal splash

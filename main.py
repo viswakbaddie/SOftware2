@@ -1,16 +1,28 @@
-# This is a sample Python script.
+from flask import Flask
+from flask_cors import CORS
+import mysql.connector as mysql
+con=mysql.connect(host='localhost', user='root',password='password',database='flight_game')
+cursor=con.cursor()
+'''
+app = Flask(__name__)
+CORS(app)
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+@app.route('/location', methods=['GET'])
+def hello_name():
+    query = 'select * from airport;'
+    cursor.execute(query)
+    data = cursor.fetchall()
+    for i in data:
+        print(i[4], i[5])
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    app.run(debug=True)'''
+l=[]
+query = 'select * from airport;'
+cursor.execute(query)
+data = cursor.fetchall()
+for i in data:
+    d = {}
+    d['location'] = [i[4],i[5]]
+    l.append(d)
+print(l)
