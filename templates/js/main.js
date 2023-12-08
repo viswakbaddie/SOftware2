@@ -40,7 +40,7 @@ function showWeather(airport){
 // function to check if any goals have been reached
 
 // function to update goal data and goal table in UI
-async function gold(status){
+async function gold(){
   const response = await fetch('http://127.0.0.1:5000/gold');
   const data = await response.json();
   alert(data.new)
@@ -55,7 +55,6 @@ async function gold(status){
   if(data.remaining<0){
     window.location.href = "http://localhost:63342/SOftware2/templates/loose.html";
   }
-
 
 }
 
